@@ -42,6 +42,7 @@
         at laborum eaque, modi voluptas aut! Quam nihil deleniti velit excepturi, quidem, veniam aut doloremque iure
         reprehenderit natus vel quia iusto? Magni veritatis provident libero hic quisquam, perferendis officia quasi
         molestiae sit sunt fugiat, perspiciatis architecto velit unde molestias ratione totam, atque doloremque!</p>
+        <hr>
     </div>
     <!--
       autocomplete="off" adresses an issue with firefox
@@ -75,6 +76,11 @@
       background: white;
       display: grid;
       grid-template-rows: 1fr auto;
+      transition: all 0.15s ease-in-out;
+    }
+
+    .wrapper.accepted {
+      transform: translateY(-100vh);
     }
 
     button {
@@ -83,10 +89,17 @@
       font-size: 1rem;
       padding: 20px;
       transition: all 0.2s;
+      border: none;
+      cursor: pointer;
     }
 
     button[disabled] {
       opacity: 0.1;
+      cursor: default;
+    }
+
+    button.processing {
+      background-color: gray;
     }
 
     .terms-and-conditions {

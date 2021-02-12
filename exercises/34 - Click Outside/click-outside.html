@@ -6,36 +6,116 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title></title>
   <link rel="stylesheet" href="../../base.css">
+  <style>
+    body {
+      margin: 4em;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-gap: 2em;
+    }
+    .card {
+      background-color: white;
+      padding: 1em;
+      border-radius: 0.5em;
+    }
+    .card h2 {
+      color: black;
+      text-shadow: none;
+    }
+    .card button {
+      cursor: pointer;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 0.5em;
+    }
+    .modal-outer {
+      display: grid;
+      background-color: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      height: 100vh;
+      width: 100vw;
+      top: 0;
+      left: 0;
+      justify-content: center;
+      align-items: center;
+
+      /* Hide it without `.open` */
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(0.5em);
+
+      transition: all 0.25s ease-in-out;
+    }
+    .modal-outer.open {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .modal-inner {
+      max-width: 500px;
+      min-height: 500px;
+      background-color: white;
+      padding: 3em 3em 1.5em;
+      border-radius: 2em;
+      overflow: hidden;
+    }
+    .modal-inner h2 {
+      color: black;
+      text-shadow: none;
+    }
+    .modal-inner h4 {
+      color: gray;
+      text-shadow: none;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 18px;
+      margin-bottom: -0.5em;
+    }
+    .modal-inner img {
+      width: calc(100% + 6em);
+      height: 16em;
+      object-fit: cover;
+      object-position: 50% 30%;
+      margin-left: -3em;
+      margin-right: -3em;
+      margin-top: -3em;
+      margin-bottom: 2em;
+    }
+  </style>
 </head>
 
 <body>
   <div class="cards">
-    <div class="card" data-description="Wes is cool">
-      <img src="https://picsum.photos/200" alt="Wes Bos">
+    <div class="card" data-description="Wes is cool.">
+      <img src="https://pbs.twimg.com/profile_images/877525007185858562/7G9vGTca_400x400.jpg" alt="">
       <h2>Wes Bos</h2>
-      <button>Learn more →</button>
+      <button>Meet Wes →</button>
     </div>
     <div class="card" data-description="Scott is neat!">
-      <img src="https://picsum.photos/200" alt="Wes Bos">
+      <img src="https://pbs.twimg.com/profile_images/1352659612487589897/TMmn7RCw_400x400.jpg" alt="">
       <h2>Scott Tolinski</h2>
-      <button>Learn more →</button>
+      <button>Meet Scott →</button>
     </div>
-    <div class="card" data-description="Kait is beautiful!">
-      <img src="https://picsum.photos/200" alt="Wes Bos">
+    <div class="card" data-description="Kait is wonderful!">
+      <img src="https://pbs.twimg.com/profile_images/910647943148969985/8LJES5ac_400x400.jpg" alt="">
       <h2>Kait Bos</h2>
-      <button>Learn more →</button>
+      <button>Meet Kait →</button>
     </div>
     <div class="card" data-description="Snickers is a dog!">
-      <img src="https://picsum.photos/200" alt="Wes Bos">
+      <img src="https://pbs.twimg.com/media/BqxmuGwIAAAF6Aj?format=jpg&name=small" alt="">
       <h2>Snickers the dog</h2>
-      <button>Learn more →</button>
+      <button>Meet Snickers →</button>
     </div>
 
   </div>
 
   <div class="modal-outer">
     <div class="modal-inner">
-
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse dolorum adipisci tenetur, harum velit magnam necessitatibus saepe consectetur iusto fugiat veritatis numquam animi, beatae rerum nisi ducimus placeat dicta quas.</p>
     </div>
   </div>
   <script src="./click-outside.js"></script>

@@ -8,18 +8,58 @@
   <link rel="stylesheet" href="../../base.css">
 </head>
 
-<body>
-  <div class="items">
-    <p>Hi I'm a item</p>
-    <div>
-      <h2>Sub Div</h2>
-      <p>Hi I'm a item</p>
+<body style="margin: 3em;">
 
+  <img class="nice cool hide" src="https://source.unsplash.com/random/500x500" />
+
+  <div class="items wrapper">
+    <div class="item">
+      <p class="joel">I am Joel and I <em>love</em> tacos and <strong>make websites</strong>!</p>
+      <img src="https://placehold.it/400" alt="">
     </div>
-    <img src="https://source.unsplash.com/random/300x300" />
-    <p>Hi I'm a item</p>
-    <p>Hi I'm a item</p>
+    <hr>
+    <!-- <div class="item hide">
+      <h2>
+        I am a heading
+        <span>I am hidden!</span>
+      </h2>
+      <img src="https://source.unsplash.com/random/200x200" />
+      <p>Hi I'm an item</p>
+    </div> -->
+    <article class="item">
+      <h2>I'm an article</h2>
+      <p class="pizza">This is how many pizzas I ate! 🍕</p>
+      <img src="https://source.unsplash.com/random/250x250" />
+    </article>
   </div>
+
+  <style>
+    .hide {
+      display: none;
+    }
+    h2 span {
+      display: none;
+    }
+
+    img {
+      transition: all 0.25s ease-in-out;
+    }
+
+    .nice {
+      margin-bottom: 3em;
+    }
+
+    .round {
+      border-radius: 50%;
+      transform: rotate(0.95turn) scale(0.875);
+      box-shadow: 0 0 5em black;
+    }
+    hr {
+      margin: 2em 0;
+    }
+  </style>
+
+  <script src="./traversing.js"></script>
 </body>
 
 </html>

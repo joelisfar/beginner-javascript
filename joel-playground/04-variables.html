@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Variables!</title>
+  <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+
+    <script>
+        'use strict';
+
+        // 'var' is function scoped, old
+        var first = 'joel';
+
+        // 'let' and 'const' are block scoped, newer (ES 6)
+        let age = 32;
+        let year = 2020;
+
+        let birthYear = year - age;
+
+        console.log('You were born in', birthYear);
+        
+        const cool = true;
+
+        if (cool) {
+          console.log('You are cool');
+        }
+
+        // Wes opinions
+        // Anytime Wes creates a variable he uses 'const'
+        // Anytime he needs to change one, he uses 'let'
+        // Wes almost never uses 'var'
+
+        // Variables should not start with uppercase letters
+        // Variables can start with '_' or '$', in addition to any letter a-z
+        // '_' and '$' are sort of used by frameworks so don't use 'em prolly
+        const dog = 'Bowser';
+
+        console.log('Your dog is named', dog);
+
+        // camelCase
+        const iLovePizza = true;        
+
+        // snake_case
+        const this_is_a_snake = 'neat';
+
+        // kebab-case-is-not-allowed because hyphens aren't allowed in variable names
+        // const super-is-a-kebab = 'neat';
+
+    </script>
+
+</body>
+</html>
