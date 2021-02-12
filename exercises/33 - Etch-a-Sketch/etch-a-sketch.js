@@ -3,8 +3,8 @@ const canvas = document.querySelector('#etch-a-sketch');
 const canvasFrame = document.querySelector('.canvas-frame');
 const ctx = canvas.getContext('2d');
 const shakeButton = document.querySelector('.shake');
-const MOVE_AMOUNT = 100;
-const LINE_WIDTH = 100;
+const MOVE_AMOUNT = 50;
+const LINE_WIDTH = 50;
 
 // Setup our canvas for drawing
 // Make a variable called height and width from the same properties on our canvas
@@ -68,7 +68,7 @@ function draw({ key }) {
   ctx.stroke();
 
   // Increment the hue
-  hue += 6;
+  hue += 8;
   ctx.strokeStyle = `hsl(${hue}, 100%, 47.5%)`;
 }
 
