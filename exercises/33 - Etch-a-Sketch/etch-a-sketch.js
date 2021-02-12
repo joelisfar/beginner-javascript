@@ -1,9 +1,10 @@
 // Select the elements on the page - canvas, shake button
 const canvas = document.querySelector('#etch-a-sketch');
+const canvasFrame = document.querySelector('.canvas-frame');
 const ctx = canvas.getContext('2d');
 const shakeButton = document.querySelector('.shake');
-const MOVE_AMOUNT = 150;
-const LINE_WIDTH = 150;
+const MOVE_AMOUNT = 100;
+const LINE_WIDTH = 100;
 
 // Setup our canvas for drawing
 // Make a variable called height and width from the same properties on our canvas
@@ -21,8 +22,8 @@ ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
 ctx.lineWidth = LINE_WIDTH;
 
-let hue = 0;
-ctx.strokeStyle = `hsl(${hue}, 100%, 47.5%)`;
+let hue = 300;
+ctx.strokeStyle = `hsl(${hue}, 100%, 40%)`;
 ctx.beginPath();
 ctx.moveTo(x, y);
 ctx.lineTo(x, y);
@@ -67,7 +68,7 @@ function draw({ key }) {
   ctx.stroke();
 
   // Increment the hue
-  hue += 5;
+  hue += 6;
   ctx.strokeStyle = `hsl(${hue}, 100%, 47.5%)`;
 }
 
@@ -83,12 +84,13 @@ function handleKey(e) {
 // Shake/clear function
 function clearCanvas() {
   // Add class for animation
-  canvas.classList.add('shake');
-  canvas.addEventListener(
+  canvasFrame.classList.add('shake');
+  canvasFrame.addEventListener(
     'animationend',
     function () {
-      canvas.classList.remove('shake');
+      canvasFrame.classList.remove('shake');
       ctx.clearRect(0, 0, width, height);
+      shakeButton.blur();
     },
     { once: true }
   );
